@@ -67,11 +67,18 @@ header a {
 
 #homeHeader {
     background: url(IMAGES/HEADER\ BACK.jpeg);
+    background-size: cover;
 }
 
 #servicesHeader {
     background: url(IMAGES/SERVICES\ HEADER.jpg);
-    
+    background-size: cover;
+}
+
+#habitatsHeader {
+    background: url(IMAGES/HABITATS\ HEADER.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 .website-header h1 {
@@ -205,3 +212,15 @@ header a {
 .right-content a {
     margin: 5px;
 }
+
+/* SERVICES PAGE */
+
+.service-p {
+    width: 800px;
+    height: 400px;
+    border-radius: 50px; 
+}
+
+/* HABITATS PAGE */
+
+/* LOGIN PAGE */
