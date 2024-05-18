@@ -213,14 +213,149 @@ header a {
     margin: 5px;
 }
 
-/* SERVICES PAGE */
-
 .service-p {
     width: 800px;
     height: 400px;
     border-radius: 50px; 
 }
 
-/* HABITATS PAGE */
+.contact-section {
+    width: 100%;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+  
+.contact-intro > * + * {
+    margin-top: 1rem;
+}
+  
+.contact-title {
+    font-family: Pt Sans Narrow, sans-serif;
+    font-size: 40px;
+    line-height: 2.25rem;
+    font-weight: 700;
+}
+  
+.contact-description {
+    color: rgb(107 114 128);
+    
+}
+  
+.form-group-container {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+  
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+  
+.form-label {
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+  
+.form-input,
+.form-textarea {
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    resize: none;
+}
+  
+.form-input::placeholder,
+.form-textarea:focus-visible {
+    color: #6b7280;
+}
+  
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+    color: #6b7280;
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+  
+.form-textarea {
+    min-height: 120px;
+}
+  
+.form-submit {
+    width: 100%;
+    margin-top: 1.2rem;
+    background-color: #c6a41c;
+    color: #fff;
+    padding: 13px 5px;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+}
 
-/* LOGIN PAGE */
+.login {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.login h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+
+.login form input[type="password"], .login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    color: #333333;
+}
+
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+   margin-top: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.login form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}

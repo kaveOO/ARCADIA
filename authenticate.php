@@ -1,15 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "arcadia_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("La connexion a échoué : " . $conn->connect_error);
-}
+include("connect.php");
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -24,13 +15,13 @@ if ($result->num_rows > 0) {
 
     switch ($user_type) {
         case 'admin':
-            header("Location: PANELS/administrateur.php");
+            header("Location: administrateur.php");
             break;
         case 'vétérinaire':
-            header("Location: PANELS/vétérinaire.php");
+            header("Location: vétérinaire.php");
             break;
         case 'employé':
-            header("Location: PANELS/employé.html");
+            header("Location: employé.html");
             break;
         default:
             header("Location: index.php");

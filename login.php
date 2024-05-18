@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +21,7 @@
         <a href="login.html" id="connectButton">CONNEXION</a>
     </header>
     
-    <div class="login-container">
+    <div class="login">
         <H1>SE CONNECTER</H1>
         <form action="authenticate.php" method="post">
             <label for="username">
@@ -33,7 +32,7 @@
                 <i class="fa-solid fa-key fa-2xl"></i>
             </label>
             <input type="text" name="password" placeholder="Password" id="password" required>
-            <input type="submit" value="Login">
+            <input type="submit" value="CONNEXION">
         </form>
     </div>
 </body>
