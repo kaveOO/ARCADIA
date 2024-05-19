@@ -1,12 +1,12 @@
 <?php
+$host = 'localhost';
+$db = 'arcadia_db';
+$user = 'root';
+$pass = '';
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "arcadia_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("La connexion a échoué : " . $conn->connect_error);
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
 }

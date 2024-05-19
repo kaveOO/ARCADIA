@@ -42,6 +42,18 @@ header a {
     color: #333333;
 }
 
+#addUserButton {
+    border: none;
+    font-size: large;
+    padding: 15px;
+    margin-right: 30px;
+    border-radius: 100px; 
+    background-color: #f8cd23;
+    cursor: pointer;
+    color: #333333;
+    text-decoration: none;
+}
+
 .container {
     text-align: center;
     align-items: center;
@@ -358,4 +370,62 @@ header a {
 .login form input[type="submit"]:hover {
   background-color: #2868c7;
     transition: background-color 0.2s;
+}
+
+.add-user-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-user-pop {
+    padding: 40px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: #c6a41c;
+    width: 500px;
+    height: 400px;
+}
+
+.add-user-pop h2 {
+    font-family: Pt Sans Narrow, sans-serif;
+    font-size: 30px;
+}
+
+.add-user-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-user-form input[type="email"] {
+    margin-top: 30px;
+    border: none;
+    background-color: #333333;
+    border-radius: 5px;
+    overflow: visible;
+    padding: 10px;
+}
+
+.add-user-form input[type="password"],
+.add-user-form select {
+    border: none;
+    background-color: #333333;
+    border-radius: 5px;
+    overflow: visible;
+    padding: 10px;
+}
+
+.add-user-form input[type="submit"] {
+    margin-top: 35px;
+    border: none;
+    background-color: #2868c7;
+    border-radius: 5px;
+    overflow: visible;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.add-user-form input[type="submit"]:hover {
+    background-color: #3274d6;
 }

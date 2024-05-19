@@ -54,9 +54,7 @@
                     <h3>DESCRIPTION</h3>
                 </div>
             </div>
-
-
-
+            
         </div>
     </div>
 

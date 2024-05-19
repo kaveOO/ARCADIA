@@ -18,12 +18,12 @@
             <a href="contact.html">CONTACT</a>
         </nav>
 
-        <a href="login.html" id="connectButton">CONNEXION</a>
+        <a href="login.php" id="connectButton">CONNEXION</a>
     </header>
     
     <div class="login">
         <H1>SE CONNECTER</H1>
-        <form action="authenticate.php" method="post">
+        <form action="auth.php" method="post">
             <label for="username">
                 <i class="fa-solid fa-user fa-2xl"></i>
             </label>
