@@ -47,6 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <input type="submit" value="CREER LE COMPTE">
                 </form>
+
+                <a href="administrateur.php">RETOURNER AU PANEL</a>
             </div>
         </div>
     </div>

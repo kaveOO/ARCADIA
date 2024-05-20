@@ -37,9 +37,19 @@
     echo "Erreur : " . $e->getMessage();
 }
 
+echo "<h2>Ajouter un nouveau service</h2>";
+echo "<form action='actions_services.php' method='post'>";
+echo "<input type='text' name='nouveau_service_nom' placeholder='Nom du service' required>";
+echo "<textarea name='nouveau_service_description' placeholder='Description du service' required></textarea>";
+echo "<input type='submit' name='ajouter' value='Ajouter'>";
+echo "</form>";
 $pdo = null;
 
 ?>
+    </div>
+
+    <div class="container">
+        <a href="administrateur.php">RETOURNER AU PANEL</a>
     </div>
     
 </body>

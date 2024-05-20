@@ -138,6 +138,7 @@ header a {
 .services-container {
     margin: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 

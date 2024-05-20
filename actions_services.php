@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':description', $service_description, PDO::PARAM_STR);
             $stmt->bindParam(':service_id', $service_id, PDO::PARAM_INT);
             $stmt->execute();
+            header("location: edit-services.php");
         } catch (PDOException $e) {
             echo "Erreur lors de la modification du service : " . $e->getMessage();
         }
@@ -36,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':service_id', $service_id, PDO::PARAM_INT);
             $stmt->execute();
+            header("location: edit-services.php");
         } catch (PDOException $e) {
             echo "Erreur lors de la suppression du service : " . $e->getMessage();
         }
@@ -43,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Traitement de l'ajout d'un nouveau service
         $nouveau_service_nom = $_POST['nouveau_service_nom'];
         $nouveau_service_description = $_POST['nouveau_service_description'];
+        header("location: edit-services.php");
 
         try {
             $sql = "INSERT INTO service (name, description) VALUES (:name, :description)";

@@ -31,30 +31,41 @@
     <div class="container">
         <div class="services-container">
 
-            <div class="service-p" id="restauration">
-                <div class="service-content">
-                    <H1>SERVICE</H1>
-                    <h3>DESCRIPTION</h3>
-                </div>
-            </div>
+        <?php
+        require_once("connect.php");
 
-            <div class="service-p" id="visite-habitats">
-                <div class="service-content">
-                    <H1>SERVICE</H1>
-                    <h3>DESCRIPTION</h3>
-                </div>
-            </div>
-        </div>
-    
-        <div class="services-container">
+        try {
+            $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Erreur de connexion : " . $e->getMessage());
+        }
 
-            <div class="service-p" id="visite-train">
-                <div class="service-content">
-                    <H1>SERVICE</H1>
-                    <h3>DESCRIPTION</h3>
-                </div>
-            </div>
-            
+        // Récupérer les services existants depuis la base de données
+        try {
+            $sql = "SELECT service_id, name, description FROM service";
+            $stmt = $pdo->query($sql);
+
+            if ($stmt->rowCount() > 0) {
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<div class='service-p'>";
+                    echo "<div class='service-content'>";
+                    echo "<h1>" . htmlspecialchars($row["name"]) . "</h1>";
+                    echo "<h3>" . htmlspecialchars($row["description"]) . "</h3>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>Aucun service trouvé.</p>";
+            }
+        } catch (PDOException $e) {
+            echo "Erreur : " . $e->getMessage();
+        }
+
+        // Fermer la connexion à la base de données
+        $pdo = null;
+        ?>
+
         </div>
     </div>
 
