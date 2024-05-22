@@ -12,8 +12,8 @@
         <img src="IMAGES/LOGO ARCADIA.png" alt="LOGO ZOO">
 
         <nav>
-            <a href="index.html">ACCUEIL</a>
-            <a href="services.html">SERVICES</a>
+            <a href="index.php">ACCUEIL</a>
+            <a href="services.php">SERVICES</a>
             <a href="habitats.php">HABITATS</a>
             <a href="contact.php">CONTACT</a>
         </nav>
