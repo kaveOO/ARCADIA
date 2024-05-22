@@ -112,21 +112,6 @@ header a {
     overflow: hidden;
 }
 
-#savane {
-    background: url(IMAGES/SAVANE.jpg);
-    background-size: cover;
-}
-
-#jungle {
-    background: url(IMAGES/JUNGLE.jpg);
-    background-size: cover;
-}
-
-#marais {
-    background: url(IMAGES/MARAIS.jpg);
-    background-size: cover;
-}
-
 .habitat-content {
     margin: 10px;
     display: flex;
@@ -146,21 +131,6 @@ header a {
     width: 500px;
     height: 300px;
     border-radius: 50px;
-}
-
-#restauration {
-    background: url(IMAGES/RESTAURATION.webp);
-    background-size: cover;
-}
-
-#visite-habitats {
-    background: url(IMAGES/VISITE\ HABITATS.png);
-    background-size: cover;
-}
-
-#visite-train {
-    background: url(IMAGES/VISITE\ TRAIN.jpg);
-    background-size: cover;
 }
 
 .service-content {

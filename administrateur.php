@@ -24,6 +24,7 @@
     <div class="container">
         <a id="addUserButton" href="add-user.php">CREER UN COMPTE</a>
         <a id="addUserButton" href="edit-services.php">MODIFIER LES SERVICE</a>
+        <a id="addUserButton" href="edit-habitats.php">MODIFIER LES HABITATS</a>
     </div>
 
     <div class="container">

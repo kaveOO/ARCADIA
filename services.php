@@ -41,7 +41,7 @@
             die("Erreur de connexion : " . $e->getMessage());
         }
 
-        // Récupérer les services existants depuis la base de données
+        
         try {
             $sql = "SELECT service_id, name, description FROM service";
             $stmt = $pdo->query($sql);
@@ -62,7 +62,7 @@
             echo "Erreur : " . $e->getMessage();
         }
 
-        // Fermer la connexion à la base de données
+        
         $pdo = null;
         ?>
 

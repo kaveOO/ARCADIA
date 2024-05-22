@@ -12,7 +12,7 @@ try {
 // Traitement des actions sur les service
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['modifier'])) {
-        // Traitement de la modification du service
+
         $service_id = $_POST['service_id'];
         $service_nom = $_POST['service_nom'];
         $service_description = $_POST['service_description'];
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Erreur lors de la modification du service : " . $e->getMessage();
         }
     } elseif (isset($_POST['supprimer'])) {
-        // Traitement de la suppression du service
+        
         $service_id = $_POST['service_id'];
 
         try {
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Erreur lors de la suppression du service : " . $e->getMessage();
         }
     } elseif (isset($_POST['ajouter'])) {
-        // Traitement de l'ajout d'un nouveau service
+        
         $nouveau_service_nom = $_POST['nouveau_service_nom'];
         $nouveau_service_description = $_POST['nouveau_service_description'];
         header("location: edit-services.php");
@@ -59,6 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Fermer la connexion à la base de données
+
 $pdo = null;
 
