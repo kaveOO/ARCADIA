@@ -10,7 +10,7 @@
     <div class="container">
         <?php
 
-        require_once("connect.php");
+        require_once("dbConnect.php");
 
         try {
             $sql = "SELECT service_id, name, description FROM service";

@@ -1,3 +1,52 @@
+<?php
+
+session_start();
+
+require("dbConnect.php");
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = trim($_POST['username']); 
+    $password = trim($_POST['password']); 
+
+    
+    $stmtUser = $conn->prepare('SELECT * FROM users WHERE email = ?');
+    $stmtUser->bind_param('s', $email);
+    $stmtUser->execute();
+    $resultUser = $stmtUser->get_result();
+    $user = $resultUser->fetch_assoc();
+
+    if ($user && password_verify($password, $user['password_hash'])) {
+        $_SESSION['user'] = $user;
+        $_SESSION['userId'] = $user['userId']; 
+        $userId = $user['userId'];
+
+        
+        $stmtRole = $conn->prepare("SELECT label FROM roles WHERE userId = ?");
+        $stmtRole->bind_param('i', $userId);
+        $stmtRole->execute();
+        $resultRole = $stmtRole->get_result();
+        $role = $resultRole->fetch_assoc();
+
+        if ($role) {
+            $label = $role['label'];
+
+            if ($label == 'Administrator') {
+                header('Location: adminPanel.php');
+            } elseif ($label == 'Veterinarian') {
+                header('Location: veterPanel.php');
+            } elseif ($label == 'Employee') {
+                header('Location: employPanel.php');
+            }
+            exit;
+        } else {
+            echo "Role not found for the user.";
+        }
+    } else {
+        echo "Email or password incorrect.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +72,7 @@
     
     <div class="login">
         <H1>SE CONNECTER</H1>
-        <form action="auth.php" method="post">
+        <form action="login.php" method="post">
             <label for="username">
                 <i class="fa-solid fa-user fa-2xl"></i>
             </label>
@@ -31,7 +80,7 @@
             <label for="password">
                 <i class="fa-solid fa-key fa-2xl"></i>
             </label>
-            <input type="text" name="password" placeholder="Password" id="password" required>
+            <input type="password" name="password" placeholder="Password" id="password" required>
             <input type="submit" value="CONNEXION">
         </form>
     </div>
